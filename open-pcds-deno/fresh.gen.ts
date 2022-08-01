@@ -5,16 +5,28 @@
 import * as $0 from "./routes/[name].tsx";
 import * as $1 from "./routes/api/joke.ts";
 import * as $2 from "./routes/index.tsx";
+import * as $3 from "./routes/main-home.tsx";
 import * as $$0 from "./islands/Counter.tsx";
+import * as $$1 from "./islands/CustomForm.tsx";
+import * as $$2 from "./islands/CustomTable.tsx";
+import * as $$3 from "./islands/Layout.tsx";
+import * as $$4 from "./islands/SideNav.ts";
+import * as $$5 from "./islands/Topbar.tsx";
 
 const manifest = {
   routes: {
     "./routes/[name].tsx": $0,
     "./routes/api/joke.ts": $1,
     "./routes/index.tsx": $2,
+    "./routes/main-home.tsx": $3,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
+    "./islands/CustomForm.tsx": $$1,
+    "./islands/CustomTable.tsx": $$2,
+    "./islands/Layout.tsx": $$3,
+    "./islands/SideNav.ts": $$4,
+    "./islands/Topbar.tsx": $$5,
   },
   baseUrl: import.meta.url,
 };
