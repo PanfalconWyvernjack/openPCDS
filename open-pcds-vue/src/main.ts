@@ -2,4 +2,19 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import PrimeVue from 'primevue/config';
+import Dialog from 'primevue/dialog';
+import Button from 'primevue/button';
+import Calendar from 'primevue/calendar';
+ 
+import 'primevue/resources/themes/saga-blue/theme.css' //theme
+import 'primevue/resources/primevue.min.css'; //core css
+import 'primeicons/primeicons.css'; //icons
+
+const app = createApp(App);
+app.use(PrimeVue);
+
+app.component('Dialog', Dialog);
+app.component('Button', Button);
+app.component('Calendar', Calendar);
+app.mount('#app')
