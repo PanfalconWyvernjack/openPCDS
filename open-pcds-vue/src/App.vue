@@ -12,6 +12,12 @@
     <InputText v-if="control.controlType === 'input'"/>
     <Calendar v-else-if="control.controlType === 'date'"/>
     <Textarea v-else-if="control.controlType === 'textarea'" rows="5" cols="30" />
+    <DataTable v-else-if="control.controlType === 'table'">
+      <Column field="vin" header="Vin"></Column>
+      <Column field="year" header="Year"></Column>
+      <Column field="brand" header="Brand"></Column>
+      <Column field="color" header="Color"></Column>
+    </DataTable>
   </div>
   <div id="add-btn">
     <Button label="Add" @click="addAmt()">
@@ -25,16 +31,10 @@
     <Button label="Add" @click="addTextArea()">
       <i class="pi pi-plus"></i> TextArea
     </Button>
-
-    <DataTable :value="cars">
-      <Column field="vin" header="Vin"></Column>
-      <Column field="year" header="Year"></Column>
-      <Column field="brand" header="Brand"></Column>
-      <Column field="color" header="Color"></Column>
-    </DataTable>
-    <DataTable>
-      <Column header="test">Something</Column>
-    </DataTable>
+    &nbsp;
+    <Button label="Add" @click="addTable()">
+      <i class="pi pi-plus"></i> Table
+    </Button>
     <div>
       <Toast />
 
@@ -81,9 +81,47 @@ const addTextArea = () => {
   });
 }
 
+const addTable = () => {
+  controls.value.push({
+    controlType: 'table',
+    label: 'Table'
+  });
+}
+
 const menuitems = [
   {
     label:'File',
+    icon:'pi pi-fw pi-file',
+    items:[
+      {
+        label:'New',
+        icon:'pi pi-fw pi-plus',
+        items:[
+          {
+            label:'Bookmark',
+            icon:'pi pi-fw pi-bookmark'
+          },
+          {
+            label:'Video',
+            icon:'pi pi-fw pi-video'
+          }
+        ]
+      },
+      {
+        label:'Delete',
+        icon:'pi pi-fw pi-trash'
+      },
+      {
+        separator:true
+      },
+      {
+        label:'Export',
+        icon:'pi pi-fw pi-external-link'
+      }
+    ]
+  },
+  {
+    label:'Add Field',
     icon:'pi pi-fw pi-file',
     items:[
       {
@@ -212,28 +250,32 @@ const items = [
         label: 'Add',
         icon: 'pi pi-pencil',
         command: () => {
-            this.$toast.add({ severity: 'info', summary: 'Add', detail: 'Data Added' });
+          console.log('add');
+            //this.$toast.add({ severity: 'info', summary: 'Add', detail: 'Data Added' });
         }
     },
     {
         label: 'Update',
         icon: 'pi pi-refresh',
         command: () => {
-            this.$toast.add({ severity: 'success', summary: 'Update', detail: 'Data Updated' });
+            console.log('update');
+            //this.$toast.add({ severity: 'success', summary: 'Update', detail: 'Data Updated' });
         }
     },
     {
         label: 'Delete',
         icon: 'pi pi-trash',
         command: () => {
-            this.$toast.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
+          console.log('delete');  
+          // this.$toast.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
         }
     },
     {
         label: 'Upload',
         icon: 'pi pi-upload',
         command: () => {
-            this.$router.push('fileupload');
+          console.log('upload')
+            //this.$router.push('fileupload');
         }
     },
     {
