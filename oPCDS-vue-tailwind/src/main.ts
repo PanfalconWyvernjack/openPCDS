@@ -10,6 +10,8 @@ import './assets/main.css'
 // also from https://tailwindcss.com/docs/installation
 import './input.css'
 
+//oPCDS-vue-tailwind % npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
 const app = createApp(App)
 
 app.use(createPinia())
