@@ -4,4 +4,4 @@
 - Review and remove package-lock.json, as we'll be using Yarn going forward
 
 Trello Board:
-https://trello.com/invite/b/N5Y6oaFR/1ed58089dd9dd5c6dec85069f0dd1732/openpcds
+https://trello.com/b/N5Y6oaFR/openpcds
